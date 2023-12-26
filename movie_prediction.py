@@ -31,6 +31,8 @@ def predict_probabilities(actor, director, genre):
    director_encoded = mapping_director[director]
    genre_encoded = mapping_genre[genre]
 
+   print(actor_encoded)
+
    # Create a list of encoded features
    encoded_features = [actor_encoded, director_encoded, genre_encoded]
 
