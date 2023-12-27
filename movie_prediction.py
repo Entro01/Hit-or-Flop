@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 
 # Load the dataset
 df = pd.read_csv('dataset.csv')
@@ -15,13 +15,13 @@ df['genre'] = le.fit_transform(df['genre'])
 mapping_genre = dict(zip(le.classes_, range(len(le.classes_))))
 
 # Convert the continuous label into a binary label
-df['label'] = df['label'].apply(lambda x: 1 if x >= 0.5 else 0)
+df['label'] = df['label'].apply(lambda x: 1 if x >= 6 else 0)
 
 # Train the model
 X = df.drop(columns = ['label'])
 y = df['label']
 
-model = LogisticRegression(max_iter = 1000)
+model = RandomForestClassifier(random_state=42)
 model.fit(X, y)
 
 # Function to predict probabilities
