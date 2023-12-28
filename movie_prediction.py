@@ -1,28 +1,9 @@
-import pandas as pd
-from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
+import pickle as pk
 
-# Load the dataset
-df = pd.read_csv('dataset.csv')
+model = pk.load(open('model-files/model.pkl', 'rb'))
 
-# Encode the categorical values
-le = LabelEncoder()
-df['actor'] = le.fit_transform(df['actor'])
-mapping_actor = dict(zip(le.classes_, range(len(le.classes_))))
-df['director'] = le.fit_transform(df['director'])
-mapping_director = dict(zip(le.classes_, range(len(le.classes_))))
-df['genre'] = le.fit_transform(df['genre'])
-mapping_genre = dict(zip(le.classes_, range(len(le.classes_))))
-
-# Convert the continuous label into a binary label
-df['label'] = df['label'].apply(lambda x: 1 if x >= 6 else 0)
-
-# Train the model
-X = df.drop(columns = ['label'])
-y = df['label']
-
-model = RandomForestClassifier(random_state=42)
-model.fit(X, y)
+mapping_actor, mapping_director, mapping_genre = pk.load(open('model-files/dicts.pkl', 'rb'))
 
 # Function to predict probabilities
 def predict_probabilities(actor, director, genre):
