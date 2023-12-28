@@ -1,15 +1,63 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Predictions
-        </title>
-    </head>
-    <body>
-        <h1>
-            {{result}}
-        </h1>
-        <p>
-            {{probability}}
-        </p>
-    </body>
+<head>
+ <title>Predictions</title>
+ <style>
+    body {
+     font-family: Arial, sans-serif;
+     background-image: url('http://tinyurl.com/duj76tht');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center calc(40%);
+    }
+    .menu {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 50px;
+     background-color: transparent;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 0px;
+     color: white;
+    }
+    .button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(226, 45, 226);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    }
+    .button:hover,
+    .button:focus {
+    background-color: blueviolet;
+    }
+    .button-container {
+    display: flex;
+    justify-content: center;
+    }
+</style>
+    
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;">
+ <div class="menu">
+  <h1><a href="/home" style="color: inherit; text-decoration: none;">Hit or Flop</a></h1>
+ </div>
+ <div class="results">
+    <h1>{{result}}</h1>
+ </div>
+ <div>
+    <h1>{{probability}}%</h1>
+    <div class="button-container">
+        <a class="button" href="/info" aria-label="Info Page">Info</a>
+    </div>
+ </div>
+</body>
 </html>

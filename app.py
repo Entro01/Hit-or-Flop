@@ -3,9 +3,13 @@ from movie_prediction import predict_probabilities
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template("home.html")
+
+@app.route('/')
+def root():
+  return redirect(url_for('home'))
 
 @app.route('/go_to_prediction')
 def go_to_prediction():
