@@ -9,7 +9,7 @@ def home():
 
 @app.route('/')
 def root():
-  return redirect(url_for('home'))
+  return render_template("landing.html")
 
 @app.route('/go_to_prediction')
 def go_to_prediction():

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Predictions</title>
+ <style>
+   body {
+    font-family: Arial, sans-serif;
+    background-image: url('http://tinyurl.com/duj76tht');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center calc(40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+   }
+   .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0px;
+   }
+   h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+   }
+   p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+   }
+   .button {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(226, 45, 226);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    margin-bottom: 20px;
+   }
+   .button:hover,
+   .button:focus {
+    background-color: blueviolet;
+    border-color: #7aa8b7;
+   }
+   .content {
+   position: absolute;
+   z-index: 1;
+   }
+   .content::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: -35px;
+   width: 110%;
+   height: 100%;
+   background-image: url('https://media1.giphy.com/media/dyY0YVM7hQuQWxoYIm/giphy.gif?cid=ecf05e478gw8elkhnlah2c0e08lv6ho1f9zwwoag9kblemk9&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+   background-size: cover;
+   background-position: center;
+   opacity: 0.5;
+   z-index: -1;
+   border-radius: 20px;
+   }
+   .button-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+  }
+ </style>
+</head>
+<body>
+ <div class="menu">
+ <h1><a href="/" style="color: inherit; text-decoration: none;">Hit or Flop</a></h1>
+ </div>
+ <div class="content">
+    <h1>Welcome to Hit-or-Flop</h1>
+    <p><b>We use Machine Learning to predict the success of the next hotly anticipated movie!</b></p>
+    <p><b>Click start to predict now!</b></p>
+    <div class="button-container">
+        <a class="button" href="/home" aria-label="Predict Now">Start</a>
+    </div>   
+</div>   
+</body>
+</html>
