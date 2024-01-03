@@ -1,3 +1,6 @@
+# download model.pkl at 'model-files/model.pkl' and dicts.pkl at 'model-files/dicts.pkl' from the dataset archive linked in 'model-files\model link.txt'.
+# execute this file to populate your database
+
 from sklearn.ensemble import RandomForestClassifier
 import pickle as pk
 
