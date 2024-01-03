@@ -1,0 +1,1 @@
+download the model used in this project from https://www.kaggle.com/datasets/entropapi/hit-or-flop-datasets-archive
