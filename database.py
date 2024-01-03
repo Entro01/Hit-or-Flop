@@ -1,3 +1,6 @@
+# download the credits.csv at 'model-files/datasets/credits.csv' from the dataset archive linked in 'model-files\datasets\dataset.txt'.
+# execute this file to populate your database.
+
 import pandas as pd
 from sqlalchemy import create_engine
 from mysql.connector import connect, Error
@@ -34,6 +37,6 @@ with tqdm(total=total_rows, unit='rows') as pbar:
    # Loop over the chunks of the DataFrame
    for chunk in pd.read_csv('model-files/datasets/credits.csv', chunksize=chunk_size):
        # Insert the chunk into the database
-       chunk.to_sql('test', engine, if_exists='append', index=False)
+       chunk.to_sql('credits', engine, if_exists='append', index=False)
        # Update the progress bar
        pbar.update(len(chunk))
