@@ -1,4 +1,4 @@
-# download the credits.csv at 'model-files/datasets/credits.csv' from the dataset archive linked in 'model-files\datasets\dataset.txt'.
+# download the credits.csv at 'model-files/datasets/credits.csv' from the dataset archive linked in 'model-files\datasets\datasets link.txt'.
 # execute this file to populate your database.
 
 import pandas as pd
