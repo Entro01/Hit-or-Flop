@@ -3,25 +3,25 @@
 
 import pandas as pd
 from sqlalchemy import create_engine
-from mysql.connector import connect, Error
+from mysql.connector import connect
 from tqdm import tqdm
 
-try:
- connection = connect(
-     host='localhost',
-     user='Entro01',
-     password='password',
-     database='store'
+connection = connect(
+    host='localhost',
+    user='Entro01',
+    password='password',
+    database='store',
+    auth_plugin='mysql_native_password'
  )
- if connection.is_connected():
+
+
+if connection.is_connected():
      db_info = connection.get_server_info()
      print("Connected to MySQL Server version ", db_info)
-except Error as e:
- print("Error while connecting to MySQL", e)
-finally:
- if (connection.is_connected()):
      connection.close()
      print("MySQL connection is closed")
+else:
+    print("Error while connecting to MySQL")
 
 # Create a SQLAlchemy engine
 engine = create_engine('mysql+mysqlconnector://Entro01:password@localhost/store')
